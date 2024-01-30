@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
@@ -16,6 +17,16 @@ const config = {
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
+  },
+
+  webpack: (config, { isServer }) => {
+    config.experiments = {
+      asyncWebAssembly: true,
+      layers: true,
+    };
+    config.output.webassemblyModuleFilename =
+      (isServer ? "../" : "") + "static/wasm/[modulehash].wasm";
+    return config;
   },
 };
 
