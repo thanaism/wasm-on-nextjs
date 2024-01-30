@@ -1,3 +1,29 @@
+# Install Rust
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+```bash
+$ rustup --version
+rustup 1.26.0 (5af9b9484 2023-04-05)
+
+$ cargo --version
+cargo 1.75.0 (1d8b05cdd 2023-11-20)
+```
+
+# WebAssembly
+
+See [Compiling from Rust to WebAssembly](https://developer.mozilla.org/ja/docs/WebAssembly/Rust_to_Wasm).
+
+```bash
+cargo build wasm-pack
+```
+
+```bash
+cargo new --lib wasm-example
+```
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
