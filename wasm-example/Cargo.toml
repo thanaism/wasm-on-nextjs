@@ -9,4 +9,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+lindera = "0.7.1"
+lindera-core = "0.7.1"
 wasm-bindgen = "0.2"
