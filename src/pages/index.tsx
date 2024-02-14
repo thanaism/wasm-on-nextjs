@@ -37,7 +37,7 @@ const WasmExample = dynamic(
               }}
             />
             {!results.length ? (
-              <Spinner />
+              <LoadingDots />
             ) : (
               results.map((r, i) => <p key={i}>{r}</p>)
             )}
@@ -61,9 +61,11 @@ const buttonStyle = `
   focus:z-10 focus:ring-4 focus:ring-gray-200
 `;
 
-const Spinner = () => (
-  <div className="flex flex-col items-center justify-center">
-    <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-t-2 border-gray-900"></div>
+const LoadingDots = () => (
+  <div className="mt-4 flex justify-center">
+    <div className="h-2 w-2 animate-ping rounded-full bg-blue-600"></div>
+    <div className="mx-4 h-2 w-2 animate-ping rounded-full bg-blue-600"></div>
+    <div className="h-2 w-2 animate-ping rounded-full bg-blue-600"></div>
   </div>
 );
 
